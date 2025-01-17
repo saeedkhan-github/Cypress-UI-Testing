@@ -1,0 +1,45 @@
+name: Cypress CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # Step 4: Start the server (make sure your server runs on http://localhost:3000)
+      - name: Start server
+        run: |
+          npm run start &
+          npx wait-on http://localhost:3000
+        env:
+          CI: true
+
+      # Step 5: Run Cypress tests
+      - name: Run Cypress tests
+        run: |
+          npm run cypress:run
+        # env:
+        #   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }} # Add your Cypress record key in GitHub Secrets if using Dashboard service
+
