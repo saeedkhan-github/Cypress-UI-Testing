@@ -4,13 +4,21 @@
   "description": "UI Test Automation Playground",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+      "cypress:run": "cypress run",
+      "cypress:open": "cypress open",
+    "test:cypress": "cypress open",
+    "test:e2e": "start-server-and-test start http://localhost:3000 cypress:open"
   },
-  "author": "Inflectra Corporation",
+  "author": "",
   "license": "Apache License 2.0",
   "dependencies": {
     "express": "^4.16.3",
     "pug": "^2.0.3",
     "shuffle-array": "^1.0.1"
+  },
+  "devDependencies": {
+    "cypress": "^14.0.0",
+    "start-server-and-test": "^2.0.10"
   }
 }
