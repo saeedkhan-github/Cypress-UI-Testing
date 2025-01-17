@@ -1,6 +1,8 @@
 # ui-test-automation-playground
 
 I have use cypress for the UI testing 
+github action flows is implemented on main branch 
+push new changes into main branch run actions flows
 
 
 ## Usage
