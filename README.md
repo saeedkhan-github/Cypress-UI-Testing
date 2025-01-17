@@ -1,14 +1,7 @@
 # ui-test-automation-playground
 
-The purpose of this website is to provide a platform for sharpening UI test automation skills. Use it to practice with your test automation tool. Use it to learn test automation techniques.
+I have use cypress for the UI testing 
 
-## Live Version
-
-Latest version of this website is always available at [uitestingplayground.com](http://uitestingplayground.com).
-
-## Prerequisites
-- [Node.js](https://nodejs.org)
-- [npm](https://www.npmjs.com/get-npm)
 
 ## Usage
 
@@ -17,14 +10,11 @@ Latest version of this website is always available at [uitestingplayground.com](
 ```bash
 npm install
 ```
-3. Launch with
+3. Launch with and run cypress test
 ```bash
-node app.js
+npm run test:e2e
 ```
-4. In a browser navigate to
-```
-http://localhost:3000
-```
+
 
 ## Software Stack
 - [Node.js](https://github.com/nodejs/node)
